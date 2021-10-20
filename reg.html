@@ -1,0 +1,192 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<style>
+body{
+    background-image: url("../assets/img/login.jpeg");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+
+}
+.input-group-addon {
+   color: #fff;
+   background-color: #337ab7;
+}
+
+
+.container{
+    height: 70%;
+    width: 1200px;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    position: absolute;
+    margin: auto;
+}
+
+#loginform{
+    background: transparent;
+}
+
+.form-control, .input-group-addon {
+   border-radius: 0px;
+}
+label{
+  text-align: left !important;
+}
+</style>
+<body>
+
+<div class="container">
+      <div class="container">    
+        <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-5 col-md-offset-4 col-sm-7 col-sm-offset-3">                    
+            <div class="panel panel-primary" >
+                    <div class="panel-heading">
+                        <div class="panel-title text-center"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign In</div>
+                        <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">Forgot password?</a></div>
+                    </div>     
+
+                    <div style="padding-top:30px" class="panel-body" >
+
+                        <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+                            
+                        <form id="loginform" action="http://localhost:3500/login" class="form-horizontal" role="form" method="post">
+                                    
+                            <div style="margin-bottom: 25px" class="input-group col-sm-offset-3 col-sm-7">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                        <input id="login-username" type="text" class="form-control input-sm" name="email" value="" placeholder="username or email">                                        
+                                    </div>
+                                
+                            <div style="margin-bottom: 25px" class="input-group col-sm-offset-3 col-sm-7">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                        <input id="login-password" type="password" class="form-control input-sm" name="passwd" placeholder="password">
+                                    </div>
+                     
+                                <div style="margin-top:10px" class="form-group">
+                                    <!-- Button -->
+
+                                    <div class="col-sm-12 controls text-center">
+                                        <button id="btn-login" class="btn btn-primary btn-sm" type="submit" >Login</button>
+                                      <!-- <a id="btn-login" href="#" class="btn btn-primary btn-sm" type="submit"> Login <i class="fa fa-sign-in" aria-hidden="true"></i>   </a> -->
+                                      <!--<a id="btn-fblogin" href="#" class="btn btn-primary">Login with Facebook</a>-->
+
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <div class="col-md-12 control">
+                                        <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
+                                            Don't have an account! 
+                                        <a href="#" onClick="$('#loginbox').hide(); $('#signupbox').show()">
+                                            Sign Up Here
+                                        </a>
+                                        </div>
+                                    </div>
+                                </div>    
+                            </form>     
+
+
+
+                        </div>                     
+                    </div>  
+        </div>
+        <div id="signupbox" style="display:none; margin-top:50px" class="mainbox col-md-5 col-md-offset-4 col-sm-7 col-sm-offset-3">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="panel-title text-center">Sign Up <i class="fa fa-user-plus"></i></div>
+                            <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Sign In</a></div>
+                        </div>  
+                        <div class="panel-body" >
+                            <form action="http://localhost:3500/regPost" id="signupform" class="form-horizontal" role="form" method="post">
+                                
+                                <div id="signupalert" style="display:none" class="alert alert-danger">
+                                    <p>Error:</p>
+                                    <span></span>
+                                </div>
+                                    
+                                
+                                  
+                                <div class="form-group">
+                                    <label for="email" class="col-md-4 control-label">Email</label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control input-sm" name="email" placeholder="Email Address">
+                                    </div>
+                                </div>
+                                    
+                                <div class="form-group">
+                                    <label for="firstname" class="col-md-4 control-label">First Name</label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control input-sm" name="firstname" placeholder="First Name">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastname" class="col-md-4 control-label">Last Name</label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control input-sm" name="lastname" placeholder="Last Name">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password" class="col-md-4 control-label">Password</label>
+                                    <div class="col-md-8">
+                                        <input type="password" class="form-control input-sm" name="passwd" placeholder="Password">
+                                    </div>
+                                </div>
+                                    
+                            
+
+                                <div class="form-group">
+                                    <!-- Button -->                                        
+                                    <div class="col-md-offset-4 col-md-8">
+                                        <button id="btn-signup" type="submit" class="btn btn-primary btn-sm"> Sign Up <i class="fa fa-user-plus"></i></button>
+                                        <!--<span style="margin-left:8px;">or</span>  -->
+                                    </div>
+                                </div>
+                                
+                                <!--<div style="border-top: 1px solid #999; padding-top:20px"  class="form-group">
+                                    
+                                    <div class="col-md-offset-3 col-md-9">
+                                        <button id="btn-fbsignup" type="button" class="btn btn-primary"><i class="icon-facebook"></i>   Sign Up with Facebook</button>
+                                    </div>                                           
+                                        
+                                </div>-->
+                                <div class="form-group">
+                                    <div class="col-md-12 control">
+                                        <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
+                                            Do you have an account! 
+                                        <a href="#" onClick="$('#signupbox').hide(); $('#loginbox').show()">
+                                            Login Here
+                                        </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                            </form>
+                         </div>
+                    </div>
+
+               
+               
+                
+         </div> 
+    </div>
+    
+</div>
+
+</body> 
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <title>Document</title>
+</head>
+<body>
+  <nav class="navbar navbar-light bg-light">
+    <form class="form-inline">
+      <a href="http://127.0.0.1:5503/page1.html"><button class="btn btn-outline-danger" type="button">Home</button></a>
+      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+      <a href="http://localhost:3500/getData"><button class="btn btn-outline-danger" type="button">Main</button></a>
+    </form>
+  </nav>
+    <div id="myDiv"></div>
+
+ 
+  
+    <table class="table table-hover table-dark">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">ID</th>
+            <th scope="col">username</th>
+            <th scope="col">authorname</th>
+            <th scope="col">bookname</th>
+            <th scope="col">genre</th>
+            <th scope="col">publisher</th>
+            <th scope="col">publicationyear</th>
+            <th scope="col">bookreview</th>
+
+
+          </tr>
+        </thead>
+        <tbody>
+            <%dataList.forEach(data =>{%>
+                <tr>
+                    <th scope="row"></th>
+                    <td><%= data._id %></td>
+                    <td><%= data.username %></td>
+                    <td><%= data.authorname %></td>
+                    <td><%= data.bookname %></td>
+                    <td><%= data.genre %></td>
+                    <td><%= data.publisher %></td>
+                    <td><%= data.publicationyear %></td>
+                    <td><%= data.bookreview %></td>
+                  </tr>
+            <%})%>
+          
+        </tbody>
+      </table>
+
+    
+</body>
+</html>
